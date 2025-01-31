@@ -15,10 +15,7 @@ export default function Hero() {
           problem solver, and eager to contribute to innovative projects.
         </p>
         <div className="flex justify-center">
-          <Link
-            href="/projects"
-            className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-          >
+          <Link href="/projects" className="btn-project">
             Go to Projects
           </Link>
         </div>
