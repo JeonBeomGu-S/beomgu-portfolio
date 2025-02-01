@@ -1,14 +1,9 @@
 import Layout from '../components/layout';
 import Hero from '../components/home/hero';
-import Head from 'next/head';
 
 export default function Home() {
   return (
     <Layout>
-      <Head>
-        <title>Beomgu&apos;s Portfolio</title>
-        <meta name="description" content="Beomgu's Portfolio"></meta>
-      </Head>
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <Hero />
