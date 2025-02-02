@@ -9,21 +9,21 @@ export default function ProjectItem({ data }) {
   const start = data.properties.WorkPeriod.date.start;
   const end = data.properties.WorkPeriod.date.end;
 
-  const calculatedPeriod = (start, end) => {
-    const startDateStringArray = start.split('-');
-    const endDateStringArray = end.split('-');
-
-    let startDate = new Date(
-      startDateStringArray[0],
-      startDateStringArray[1],
-      startDateStringArray[2]
-    );
-    let endDate = new Date(endDateStringArray[0], endDateStringArray[1], endDateStringArray[2]);
-
-    const diffInMs = Math.abs(endDate - startDate);
-    const results = diffInMs / (1000 * 60 * 60 * 24);
-
-    return results;
+  const calculatedPeriod = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const months =
+      (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+    if (years === 0) {
+      return `(${remainingMonths} ${remainingMonths === 1 ? 'month' : 'months'})`;
+    } else if (remainingMonths === 0) {
+      return `(${years} ${years === 1 ? 'year' : 'years'})`;
+    }
+    return `(${years} ${years === 1 ? 'year' : 'years'} ${remainingMonths} ${
+      remainingMonths === 1 ? 'month' : 'months'
+    })`;
   };
 
   return (
@@ -43,7 +43,7 @@ export default function ProjectItem({ data }) {
         <h3 className="mt-4 text-xl">{description}</h3>
         <a href={gitHub}>Github Link</a>
         <p className="my-1">
-          Duration: {start} ~ {end} ({calculatedPeriod(start, end)} days)
+          Duration: {start} ~ {end} {calculatedPeriod(start, end)}
         </p>
         <div className="flex flex-wrap items-start mt-2">
           {tags.map((tag, index) => {
