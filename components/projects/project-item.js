@@ -45,15 +45,18 @@ export default function ProjectItem({ data }) {
         <p className="my-1">
           Duration: {start} ~ {end} ({calculatedPeriod(start, end)} days)
         </p>
-        <div className="flex items-start mt-2">
-          {tags.map(tag => {
+        <div className="flex flex-wrap items-start mt-2">
+          {tags.map((tag, index) => {
             return (
-              <h1
-                className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
-                key={tag.id}
-              >
-                {tag.name}
-              </h1>
+              <>
+                <h1
+                  className="px-2 py-1 mt-2 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+                  key={tag.id}
+                >
+                  {tag.name}
+                </h1>
+                {(index + 1) % 4 === 0 && <div className="w-full"></div>}
+              </>
             );
           })}
         </div>
