@@ -26,6 +26,14 @@ export default function ProjectItem({ data }) {
     })`;
   };
 
+  const bgColors = [
+    'bg-orange-200 dark:bg-orange-700',
+    'bg-lime-200 dark:bg-lime-700',
+    'bg-emerald-200 dark:bg-emerald-700',
+    'bg-sky-200 dark:bg-sky-700',
+    'bg-yellow-200 dark:bg-yellow-700',
+  ];
+
   return (
     <div className="project-card">
       <Image
@@ -39,9 +47,15 @@ export default function ProjectItem({ data }) {
         quality={100}
       />
       <div className="p-4 flex flex-col">
-        <h1 className="text-2xl font-bold">{title}</h1>
-        <h3 className="mt-4 text-xl">{description}</h3>
-        <a href={gitHub}>Github Link</a>
+        <h1 className="text-xl font-bold">{title}</h1>
+        <h3 className="mt-4 text-base">{description}</h3>
+        {gitHub ? (
+          <a className="mt-2" href={gitHub}>
+            Github Link
+          </a>
+        ) : (
+          <></>
+        )}
         <p className="my-1">
           Duration: {start} ~ {end} {calculatedPeriod(start, end)}
         </p>
@@ -50,7 +64,9 @@ export default function ProjectItem({ data }) {
             return (
               <>
                 <h1
-                  className="px-2 py-1 mt-2 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+                  className={`px-2 py-1 mt-2 mr-2 rounded-md ${
+                    bgColors[index % bgColors.length]
+                  } w-30`}
                   key={tag.id}
                 >
                   {tag.name}

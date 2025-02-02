@@ -10,7 +10,7 @@ export default function Projects({ projects }) {
           Projects:
           <span className="pl-4 text-blue-500">{projects.results.length}</span>
         </h1>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 p-12 m-4 xl:w-1/2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 p-12 m-4 xl:w-4/5">
           {projects.results.map(project => {
             return <ProjectItem key={project.id} data={project} />;
           })}
@@ -32,8 +32,8 @@ export async function getStaticProps() {
       database_id: databaseId,
       sorts: [
         {
-          property: 'Name',
-          direction: 'ascending',
+          property: 'WorkPeriod',
+          direction: 'descending',
         },
       ],
     });
