@@ -3,7 +3,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 
 const LottiePlayer = dynamic(() => import('react-lottie-player'), {
-  ssr: false, // 서버 측 렌더링을 비활성화
+  ssr: false, // Disable the SSR due to deployment
 });
 
 import lottieJson from '/public/main-animation.json';
