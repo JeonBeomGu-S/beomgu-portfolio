@@ -35,7 +35,7 @@ To clone and run this project locally, follow these steps:
 2. Navigate to the project directory:
 
    ```bash
-   cd your-repository
+   cd beomgu-protfolio
    ```
 
 3. Install dependencies:
