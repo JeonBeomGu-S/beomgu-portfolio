@@ -1,40 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Beomgu's Portfolio
 
-## Getting Started
+[GitHub](https://github.com/JeonBeomGu-S/beomgu-portfolio) | [Live Demo](https://beomgu-portfolio.vercel.app/)
 
-First, run the development server:
+## Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js**: Framework used for server-side rendering and building the frontend.
+- **TailwindCSS**: Utility-first CSS framework used for styling and responsive design.
+- **Notion API**: Integrated to fetch and display projects written in Notion.
+- **Lottie Animation**: Added interactive animations to enhance the user experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+This is my dynamic portfolio website built with **Next.js** and **TailwindCSS**. The website showcases the projects I have worked on and is fully responsive, ensuring a great experience across different devices.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Key Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- **Dynamic Project Display**: The portfolio pulls project data directly from Notion, allowing for easy updates and management.
+- **Interactive Animations**: Lottie animations are used to enhance visual appeal and provide a more engaging user experience.
+- **Fully Responsive**: Built with TailwindCSS to ensure the website looks great on all screen sizes.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+To clone and run this project locally, follow these steps:
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JeonBeomGu-S/beomgu-portfolio.git
+   ```
+2. Navigate to the project directory:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+   ```bash
+   cd your-repository
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install dependencies:
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Set up your .env file: Create a .env.local file in the root of your project and add the required environment variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+   ```env
+   NOTION_TOKEN=your-notion-api-key
+   NOTION_DATABASE_ID=your-notion-database-id
+   ```
+
+5. Run the development server:
+   ```bash
+   npm run dev
+   ```
+6. Visit http://localhost:3000 in your browser.
