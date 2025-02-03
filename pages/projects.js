@@ -20,7 +20,7 @@ export default function Projects({ projects }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { Client } = require('@notionhq/client');
 
   const notion = new Client({ auth: TOKEN });
