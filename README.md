@@ -13,6 +13,11 @@
 
 This is my dynamic portfolio website built with **Next.js** and **TailwindCSS**. The website showcases the projects I have worked on and is fully responsive, ensuring a great experience across different devices.
 
+- Light Mode
+  ![image](./light.png)
+- Dark Mode
+  ![image](./dark.png)
+
 ### Key Features
 
 - **Dynamic Project Display**: The portfolio pulls project data directly from Notion, allowing for easy updates and management.
